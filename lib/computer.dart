@@ -13,42 +13,6 @@ class _ComputerState extends State<Computer> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: PreferredSize(
-        preferredSize: Size.fromHeight(200),
-        child: AppBar(
-          centerTitle: true,
-          title: Text(''),
-          actions: [
-            IconButton(onPressed: (){
-              Navigator.pushNamed(context,'/');
-            }, icon: Icon(Icons.arrow_back_ios_outlined))
-          ],
-          flexibleSpace: Container(
-            child: Column(
-              children: [
-                Container(
-                  height: 200,
-                  width: double.infinity,
-                  child: Text('قسم تقنية المعلومات',style: TextStyle(fontFamily: 'Cairo',fontSize: 20,color: Colors.white, ),textAlign: TextAlign.end,),
-                ),
-              ],
-            ),
-          ),
-          elevation: 0,
-          backgroundColor: Colors.transparent,
-        ),
-      ),
-      drawer: Drawer(
-        child: SingleChildScrollView(
-          child: Container(
-            child: Column(
-              children: [
-                MyHeaderDrawer(),
-              ],
-            ),
-          ),
-        ),
-      ),
       body: SafeArea(
         child: Stack(
           children:
@@ -56,66 +20,60 @@ class _ComputerState extends State<Computer> {
             Container(
               height: 200,
               width: double.infinity,
-              decoration: BoxDecoration(
-                color: Color(0xff022C43),
-              ),
               child: Text(''),
-
+              decoration: BoxDecoration(
+                color:Color(0xff022C43)
+              ),
             ),
-            Row(
+            Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Container(
+                margin: EdgeInsets.only(top:10),
+                height: 200,
+                width: 200,
+                child: Text(''),
+                decoration: BoxDecoration(
+                    color:Color(0xff00648A),
+                ),
+              ),
+            ],
+          ),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Expanded(
-                  flex: 1,
-                  child: Container(
-                    margin: EdgeInsets.only(top: 70,right: 20,left: 20,bottom: 20),
-                    height: 700,
-                    decoration: BoxDecoration
-                      (borderRadius: BorderRadius.only
-                      (topRight: Radius.circular(50),topLeft:Radius.circular(50),
-                        bottomRight: Radius.circular(50),bottomLeft: Radius.circular(50) ),color: Colors.white,),
-                    child: Text(''),
+                Container(
+                  margin: EdgeInsets.only(top:90,right: 300),
+                  height: 200,
+                  width: 200,
+                  child: Text(''),
+                  decoration: BoxDecoration(
+                      color:Color(0xff26ADD9),
+                    borderRadius: BorderRadius.only(topLeft:Radius.circular(20)),
+
                   ),
                 ),
               ],
             ),
-            Row(
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Column(
-                  children: [
-                    Container(
-                      margin:  EdgeInsets.only(top: 100,right:150,left: 150) ,
-                      child:Image.asset("assets/image/computer.png",width: 85, height: 85),
-                    ),
-                    TextField(
+                Container(
+                  margin: EdgeInsets.only(right: 20,left: 20,top:50),
+                  height: 700,
+                  width: double.infinity,
+                  child: Text(''),
+                  decoration: BoxDecoration(
+                      color:Colors.white,
+                      borderRadius: BorderRadius.all(Radius.circular(30)),
 
-                    ),
-                  ],
+    ),
                 ),
               ],
             ),
-
-            Row(
-              children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-
-                    Container(
-                      margin: EdgeInsets.only(top: 650,right: 110,),
-                      child:  ElevatedButton(onPressed: (){
-                        Navigator.pushNamed(context,'/');
-                      }, child: Text('ارسال الطلب',style: TextStyle(fontFamily: 'Cairo',fontSize: 17,color: Colors.white ),),
-                        style: ButtonStyle(backgroundColor:
-                        MaterialStateProperty.all( Color(0xff26ADD9)), padding:MaterialStateProperty.all(EdgeInsets.only(left: 30,right: 30,top:5,bottom: 5)) ,shape: MaterialStateProperty.all(
-                          RoundedRectangleBorder(borderRadius: BorderRadius.circular(14.0),),),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ],
-            )
           ],
 
         ),

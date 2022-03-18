@@ -69,19 +69,21 @@ class _ComputerState extends State<Computer> {
                       margin: EdgeInsets.only(right: 20,left: 20,top:50),
                       height: 700,
                       width: double.infinity,
-                      child: Row(
+                      child: Column(
                         children: [
                           Container(
+                            padding: EdgeInsets.all(20),
                             child:Image.asset("assets/image/computer.png",width: 85, height: 85),
                           ),
                           Container(
+                            padding: EdgeInsets.all(20),
                             child: TextField(
                               decoration: InputDecoration(
                                 labelText: "اسم الموظف",
                                 labelStyle: TextStyle(
                                   color:Color(0xff022C43),
                                   fontFamily: 'Cairo',
-                                  fontSize: 20,
+                                  fontSize: 18,
 
                                 ),
 

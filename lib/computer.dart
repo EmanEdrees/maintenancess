@@ -10,7 +10,7 @@ class Computer extends StatefulWidget {
 }
 
 class _ComputerState extends State<Computer> {
-  String intinal_drop = 'iraq';
+  String intinal_drop = 'هندسة الادارة المحلية';
 
   @override
   Widget build(BuildContext context) {
@@ -124,13 +124,14 @@ class _ComputerState extends State<Computer> {
                               ),
                             ),
                             Container(
+                              width: 600,
                               padding: EdgeInsets.all(20),
-                              child: DropdownButton<String>(value: intinal_drop ,hint: Text("Select your countroy"),onChanged: (newval){
+                              child: DropdownButton<String>(value: intinal_drop ,iconSize: 36,isExpanded:true,hint: Text("Select your countroy"),onChanged: (newval){
                                 setState(() {
                                   intinal_drop = newval!;
                                 });
-                              },items:<String>['iraq','egypt','jordan','suadi'].map<DropdownMenuItem<String>>((String country){
-                                return DropdownMenuItem<String>(child: Text(country),value: country);
+                              },items:<String>['هندسة الادارة المحلية','ادارة المشاريع','مكتب المحافظ','مكتب المعاون الاداري'].map<DropdownMenuItem<String>>((String country){
+                                return DropdownMenuItem<String>(child: Text(country,),value: country);
                               }).toList()),
                             ),
                             Container(
@@ -165,22 +166,7 @@ class _ComputerState extends State<Computer> {
 
                               ),
                             ),
-                            Container(
-                              padding: EdgeInsets.all(20),
-                              child: const TextField(
-                                decoration: InputDecoration(
-                                  labelText: "اجراءات اضافية",
-                                  labelStyle: TextStyle(
-                                    color:Color(0xff022C43),
-                                    fontFamily: 'Cairo',
-                                    fontSize: 18,
 
-                                  ),
-
-                                ),
-
-                              ),
-                            ),
 
                             Container(
                               child:  ElevatedButton(onPressed: (){

@@ -36,6 +36,8 @@ class _ComputerState extends State<Computer> {
                 child: Text(''),
                 decoration: BoxDecoration(
                     color:Color(0xff00648A),
+                  borderRadius: BorderRadius.only(topRight:Radius.circular(20)),
+
                 ),
               ),
             ],
@@ -51,7 +53,7 @@ class _ComputerState extends State<Computer> {
                   child: Text(''),
                   decoration: BoxDecoration(
                       color:Color(0xff26ADD9),
-                    borderRadius: BorderRadius.only(topLeft:Radius.circular(20)),
+                    borderRadius: BorderRadius.only(bottomLeft:Radius.circular(20)),
 
                   ),
                 ),

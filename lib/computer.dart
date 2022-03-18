@@ -5,18 +5,21 @@ import 'package:maintenances/header_drawer.dart';
 
 class Computer extends StatefulWidget {
   const Computer({Key? key}) : super(key: key);
-
   @override
   State<Computer> createState() => _ComputerState();
 }
 
 class _ComputerState extends State<Computer> {
+  String intinal_drop = 'iraq';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        centerTitle: true,
         title: Container(
-            child: Text('تقنية المعلومات للصيانة والتجهيز',textAlign: TextAlign.right,),
+            child: Text('تقنية المعلومات للصيانة والتجهيز',style: TextStyle(fontFamily: 'Cairo',fontSize: 15),),
+
         ),
         backgroundColor: Color(0xff022C43),
         elevation: 0,
@@ -56,7 +59,7 @@ class _ComputerState extends State<Computer> {
             children: [
               //box inside1
               Container(
-                margin: EdgeInsets.only(top:10),
+                margin: EdgeInsets.only(top:100),
                 height: 200,
                 width: 200,
                 child: Text(''),
@@ -69,12 +72,13 @@ class _ComputerState extends State<Computer> {
             ],
           ),
             Column(
+
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 //box2
                 Container(
-                  margin: EdgeInsets.only(top:90,right: 300),
+                  margin: EdgeInsets.only(top:190,right: 300),
                   height: 200,
                   width: 200,
                   child: Text(''),
@@ -121,9 +125,51 @@ class _ComputerState extends State<Computer> {
                             ),
                             Container(
                               padding: EdgeInsets.all(20),
+                              child: DropdownButton<String>(value: intinal_drop ,hint: Text("Select your countroy"),onChanged: (newval){
+                                setState(() {
+                                  intinal_drop = newval!;
+                                });
+                              },items:<String>['iraq','egypt','jordan','suadi'].map<DropdownMenuItem<String>>((String country){
+                                return DropdownMenuItem<String>(child: Text(country),value: country);
+                              }).toList()),
+                            ),
+                            Container(
+                              padding: EdgeInsets.all(20),
                               child: const TextField(
                                 decoration: InputDecoration(
-                                  labelText: "اسم الموظف",
+                                  labelText: "وصف العطل",
+                                  labelStyle: TextStyle(
+                                    color:Color(0xff022C43),
+                                    fontFamily: 'Cairo',
+                                    fontSize: 18,
+
+                                  ),
+
+                                ),
+
+                              ),
+                            ),
+                            Container(
+                              padding: EdgeInsets.all(20),
+                              child: const TextField(
+                                decoration: InputDecoration(
+                                  labelText: "اجراءات اضافية",
+                                  labelStyle: TextStyle(
+                                    color:Color(0xff022C43),
+                                    fontFamily: 'Cairo',
+                                    fontSize: 18,
+
+                                  ),
+
+                                ),
+
+                              ),
+                            ),
+                            Container(
+                              padding: EdgeInsets.all(20),
+                              child: const TextField(
+                                decoration: InputDecoration(
+                                  labelText: "اجراءات اضافية",
                                   labelStyle: TextStyle(
                                     color:Color(0xff022C43),
                                     fontFamily: 'Cairo',
@@ -148,7 +194,7 @@ class _ComputerState extends State<Computer> {
                             ),
                           ],
                         ),
-                        decoration: BoxDecoration(
+                        decoration: const BoxDecoration(
                             color:Colors.white,
                             borderRadius: BorderRadius.all(Radius.circular(30),),
                           boxShadow: [

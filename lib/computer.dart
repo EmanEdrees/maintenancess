@@ -11,6 +11,7 @@ class Computer extends StatefulWidget {
 
 class _ComputerState extends State<Computer> {
   String intinal_drop = 'مكتب المحافظ';
+  String intinalComp = 'Desktop';
 
   @override
   Widget build(BuildContext context) {
@@ -105,11 +106,11 @@ class _ComputerState extends State<Computer> {
                           child: Column(
                             children: [
                               Container(
-                                padding: EdgeInsets.all(20),
+                                padding: EdgeInsets.all(15),
                                 child:Image.asset("assets/image/computer.png",width: 85, height: 85),
                               ),
                               Container(
-                                padding: EdgeInsets.all(20),
+                                padding: EdgeInsets.all(15),
                                 child: const TextField(
                                   decoration: InputDecoration(
                                     labelText: "اسم الموظف",
@@ -139,7 +140,7 @@ class _ComputerState extends State<Computer> {
                                   ),
                                   Container(
                                     width: 600,
-                                    padding: EdgeInsets.all(20),
+                                    padding: EdgeInsets.all(15),
                                     child: DropdownButton<String>(value: intinal_drop ,iconSize: 36,isExpanded:true,
                                       hint: Text("القسم", style: TextStyle(color: Colors.black,fontSize: 18,fontFamily: 'Cairo'),
                                     ),onChanged: (newval){
@@ -152,9 +153,37 @@ class _ComputerState extends State<Computer> {
                                   ),
                                 ],
                               ),
+                              //laptoptype
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Container(
+                                      padding: EdgeInsets.only(bottom: 2,right: 20),
+                                      child: Text('نوع الحاسبة',style: TextStyle(
+                                        color:Color(0xff022C43),
+                                        fontFamily: 'Cairo',
+                                        fontSize: 18,
+
+                                      ),)
+                                  ),
+                                  Container(
+                                    width: 600,
+                                    padding: EdgeInsets.all(15),
+                                    child: DropdownButton<String>(value: intinalComp ,iconSize: 36,isExpanded:true,
+                                      hint: Text("نوع الحاسبة", style: TextStyle(color: Colors.black,fontSize: 18,fontFamily: 'Cairo'),
+                                      ),onChanged: (newval){
+                                        setState(() {
+                                          intinalComp = newval!;
+                                        });
+                                      },items:<String>['Desktop','Lenovo Laptop','Hp LapTop'].map<DropdownMenuItem<String>>((String dep){
+                                        return DropdownMenuItem<String>(child: Text(dep,style: TextStyle(fontFamily: 'Cairo',fontSize: 18),),value: dep);
+                                      }).toList(),),
+                                  ),
+                                ],
+                              ),
                               //وصف العطل
                               Container(
-                                padding: EdgeInsets.all(20),
+                                padding: EdgeInsets.all(15),
                                 child: const TextField(
                                   decoration: InputDecoration(
                                     labelText: "وصف العطل",
@@ -181,6 +210,23 @@ class _ComputerState extends State<Computer> {
 
                                     ),
                                     hintMaxLines: 2,
+
+                                  ),
+
+                                ),
+                              ),
+                              //التاريخ
+                              Container(
+                                padding: EdgeInsets.all(15),
+                                child: const TextField(
+                                  decoration: InputDecoration(
+                                    labelText: "التاريخ",
+                                    labelStyle: TextStyle(
+                                      color:Color(0xff022C43),
+                                      fontFamily: 'Cairo',
+                                      fontSize: 18,
+
+                                    ),
 
                                   ),
 

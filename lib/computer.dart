@@ -10,7 +10,7 @@ class Computer extends StatefulWidget {
 }
 
 class _ComputerState extends State<Computer> {
-  String intinal_drop = 'هندسة الادارة المحلية';
+  String intinal_drop = 'مكتب المحافظ';
 
   @override
   Widget build(BuildContext context) {
@@ -101,84 +101,106 @@ class _ComputerState extends State<Computer> {
                         margin: EdgeInsets.only(right: 20,left: 20,top:12),
                         height: 680,
                         width: double.infinity,
-                        child: Column(
-                          children: [
-                            Container(
-                              padding: EdgeInsets.all(20),
-                              child:Image.asset("assets/image/computer.png",width: 85, height: 85),
-                            ),
-                            Container(
-                              padding: EdgeInsets.all(20),
-                              child: const TextField(
-                                decoration: InputDecoration(
-                                  labelText: "اسم الموظف",
-                                  labelStyle: TextStyle(
-                                    color:Color(0xff022C43),
-                                    fontFamily: 'Cairo',
-                                    fontSize: 18,
+                        child: SingleChildScrollView(
+                          child: Column(
+                            children: [
+                              Container(
+                                padding: EdgeInsets.all(20),
+                                child:Image.asset("assets/image/computer.png",width: 85, height: 85),
+                              ),
+                              Container(
+                                padding: EdgeInsets.all(20),
+                                child: const TextField(
+                                  decoration: InputDecoration(
+                                    labelText: "اسم الموظف",
+                                    labelStyle: TextStyle(
+                                      color:Color(0xff022C43),
+                                      fontFamily: 'Cairo',
+                                      fontSize: 18,
+
+                                    ),
 
                                   ),
 
                                 ),
-
                               ),
-                            ),
-                            Container(
-                              width: 600,
-                              padding: EdgeInsets.all(20),
-                              child: DropdownButton<String>(value: intinal_drop ,iconSize: 36,isExpanded:true,hint: Text("Select your countroy"),onChanged: (newval){
-                                setState(() {
-                                  intinal_drop = newval!;
-                                });
-                              },items:<String>['هندسة الادارة المحلية','ادارة المشاريع','مكتب المحافظ','مكتب المعاون الاداري'].map<DropdownMenuItem<String>>((String country){
-                                return DropdownMenuItem<String>(child: Text(country,),value: country);
-                              }).toList()),
-                            ),
-                            Container(
-                              padding: EdgeInsets.all(20),
-                              child: const TextField(
-                                decoration: InputDecoration(
-                                  labelText: "وصف العطل",
-                                  labelStyle: TextStyle(
-                                    color:Color(0xff022C43),
-                                    fontFamily: 'Cairo',
-                                    fontSize: 18,
+                              //dropdown
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Container(
+                                      padding: EdgeInsets.only(bottom: 2,right: 20),
+                                      child: Text('القسم',style: TextStyle(
+                                        color:Color(0xff022C43),
+                                        fontFamily: 'Cairo',
+                                        fontSize: 18,
+
+                                      ),)
+                                  ),
+                                  Container(
+                                    width: 600,
+                                    padding: EdgeInsets.all(20),
+                                    child: DropdownButton<String>(value: intinal_drop ,iconSize: 36,isExpanded:true,
+                                      hint: Text("القسم", style: TextStyle(color: Colors.black,fontSize: 18,fontFamily: 'Cairo'),
+                                    ),onChanged: (newval){
+                                      setState(() {
+                                        intinal_drop = newval!;
+                                      });
+                                    },items:<String>['مكتب المحافظ','مكتب المعاون الاداري','هندسة الادارة المحلية','ادارة المشاريع'].map<DropdownMenuItem<String>>((String dep){
+                                      return DropdownMenuItem<String>(child: Text(dep,style: TextStyle(fontFamily: 'Cairo',fontSize: 18),),value: dep);
+                                    }).toList(),),
+                                  ),
+                                ],
+                              ),
+                              //وصف العطل
+                              Container(
+                                padding: EdgeInsets.all(20),
+                                child: const TextField(
+                                  decoration: InputDecoration(
+                                    labelText: "وصف العطل",
+                                    labelStyle: TextStyle(
+                                      color:Color(0xff022C43),
+                                      fontFamily: 'Cairo',
+                                      fontSize: 18,
+                                    ),
+                                    hintMaxLines: 2,
+                                  ),
+
+                                ),
+                              ),
+                              //اجراءات اضافية
+                              Container(
+                                padding: EdgeInsets.all(20),
+                                child: const TextField(
+                                  decoration: InputDecoration(
+                                    labelText: "اجراءات اضافية",
+                                    labelStyle: TextStyle(
+                                      color:Color(0xff022C43),
+                                      fontFamily: 'Cairo',
+                                      fontSize: 18,
+
+                                    ),
+                                    hintMaxLines: 2,
 
                                   ),
 
                                 ),
-
                               ),
-                            ),
-                            Container(
-                              padding: EdgeInsets.all(20),
-                              child: const TextField(
-                                decoration: InputDecoration(
-                                  labelText: "اجراءات اضافية",
-                                  labelStyle: TextStyle(
-                                    color:Color(0xff022C43),
-                                    fontFamily: 'Cairo',
-                                    fontSize: 18,
-
+                              //ارسال الطلب
+                              Container(
+                                child:  ElevatedButton(onPressed: (){
+                                  Navigator.pushNamed(context,'/');
+                                }, child: Text('ارسال الطلب',style: TextStyle(fontFamily: 'Cairo',fontSize: 17,color: Colors.white ),),
+                                  style: ButtonStyle(backgroundColor:
+                                  MaterialStateProperty.all( Color(0xff26ADD9)), padding:MaterialStateProperty.all(EdgeInsets.only(left: 30,right: 30,top:5,bottom: 5)) ,shape: MaterialStateProperty.all(
+                                    RoundedRectangleBorder(borderRadius: BorderRadius.circular(14.0),),),
                                   ),
-
-                                ),
-
-                              ),
-                            ),
-
-
-                            Container(
-                              child:  ElevatedButton(onPressed: (){
-                                Navigator.pushNamed(context,'/');
-                              }, child: Text('ارسال الطلب',style: TextStyle(fontFamily: 'Cairo',fontSize: 17,color: Colors.white ),),
-                                style: ButtonStyle(backgroundColor:
-                                MaterialStateProperty.all( Color(0xff26ADD9)), padding:MaterialStateProperty.all(EdgeInsets.only(left: 30,right: 30,top:5,bottom: 5)) ,shape: MaterialStateProperty.all(
-                                  RoundedRectangleBorder(borderRadius: BorderRadius.circular(14.0),),),
                                 ),
                               ),
-                            ),
-                          ],
+
+
+                            ],
+                          ),
                         ),
                         decoration: const BoxDecoration(
                             color:Colors.white,

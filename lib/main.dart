@@ -49,13 +49,6 @@ class MyApp extends StatelessWidget {
         '/suppstatus': (context) => const Suppstatus(),
 
 
-
-
-
-
-
-
-
       },
       locale: Locale('ar'),
       supportedLocales: [

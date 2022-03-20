@@ -43,13 +43,23 @@ class _ConcatState extends State<Concat> {
         child: Stack(
           children:
           [//bodyheader
-            Container(
-              height: 200,
-              width: double.infinity,
-              child: Text(''),
-              decoration: BoxDecoration(
-                  color:Color(0xff022C43),
-              ),
+            Stack(
+              children: [
+                Container(
+                  height: 150,
+                  width: double.infinity,
+                  child: Text(''),
+                  decoration: BoxDecoration(
+                      color:Color(0xff022C43),
+                    borderRadius: BorderRadius.only(bottomLeft:Radius.circular(100),bottomRight: Radius.circular(120)),
+
+                  ),
+                ),
+                Container(
+                  child: Image.asset('assets/image/concatbg2.png',width: 150,height: 150,),
+                 
+                ),
+              ],
             ),
             Column(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -57,7 +67,7 @@ class _ConcatState extends State<Concat> {
               children: [
                 //box inside1
                 Container(
-                  margin: EdgeInsets.only(top:100),
+                  margin: EdgeInsets.only(top:2),
                   height: 200,
                   width: 200,
                   child: Text(''),
@@ -72,11 +82,10 @@ class _ConcatState extends State<Concat> {
             Column(
 
               mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 //box2
                 Container(
-                  margin: EdgeInsets.only(top:190,right: 300),
+                  margin: EdgeInsets.only(top:150,right: 300),
                   height: 200,
                   width: 200,
                   child: Text(''),
@@ -95,18 +104,14 @@ class _ConcatState extends State<Concat> {
                 Column(
                   children: [
                     Container(
-                      margin: EdgeInsets.only(right: 20,left: 20,top:12),
-                      height: 680,
+                      margin: EdgeInsets.only(right: 20,left: 20,top:160,bottom: 25),
+                      height: 500,
                       width: double.infinity,
                       child: SingleChildScrollView(
                         child: Column(
                           children: [
                             Container(
-                              padding: EdgeInsets.all(15),
-                              child:Image.asset("assets/image/computer.png",width: 85, height: 85),
-                            ),
-                            Container(
-                              padding: EdgeInsets.all(15),
+                              padding: EdgeInsets.all(20),
                               child: const TextField(
                                 decoration: InputDecoration(
                                   labelText: "اسم الموظف",
@@ -136,7 +141,7 @@ class _ConcatState extends State<Concat> {
                                 ),
                                 Container(
                                   width: 600,
-                                  padding: EdgeInsets.all(15),
+                                  padding: EdgeInsets.all(20),
                                   child: DropdownButton<String>(value: intinal_drop ,iconSize: 36,isExpanded:true,
                                     hint: Text("القسم", style: TextStyle(color: Colors.black,fontSize: 18,fontFamily: 'Cairo'),
                                     ),onChanged: (newval){
@@ -150,7 +155,7 @@ class _ConcatState extends State<Concat> {
                               ],
                             ),
                             Container(
-                              padding: EdgeInsets.all(15),
+                              padding: EdgeInsets.all(20),
                               child: const TextField(
                                 decoration: InputDecoration(
                                   labelText: "ماهي المشكلة",
@@ -166,7 +171,7 @@ class _ConcatState extends State<Concat> {
                             ),
                             //التاريخ
                             Container(
-                              padding: EdgeInsets.all(15),
+                              padding: EdgeInsets.all(20),
                               child: const TextField(
                                 decoration: InputDecoration(
                                   labelText: "التاريخ",
@@ -203,8 +208,8 @@ class _ConcatState extends State<Concat> {
                           boxShadow: [
                             BoxShadow(
                                 color: Color(0xff022C43),
-                                blurRadius: 5.0,
-                                offset: Offset(-2.0, -2.0))
+                                blurRadius: 2.0,
+                                offset: Offset(0.0, 0.0))
                           ]),
 
                     ),

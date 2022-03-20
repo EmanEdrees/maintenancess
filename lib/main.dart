@@ -6,9 +6,11 @@ import 'package:maintenances/copymachine.dart';
 import 'package:maintenances/devicestatus.dart';
 import 'package:maintenances/home.dart';
 import 'package:maintenances/internet.dart';
+import 'package:maintenances/login.dart';
 import 'package:maintenances/nofitication.dart';
 import 'package:maintenances/printer.dart';
 import 'package:maintenances/progress.dart';
+import 'package:maintenances/splash.dart';
 import 'package:maintenances/supply.dart';
 import 'package:maintenances/suppstatus.dart';
 import 'package:maintenances/who.dart';
@@ -32,6 +34,7 @@ class MyApp extends StatelessWidget {
         visualDensity: VisualDensity.adaptivePlatformDensity,
 
       ),
+    home: Splash(),
       initialRoute: '/',
       routes: {
         '/': (context) => const Home(),
@@ -47,6 +50,12 @@ class MyApp extends StatelessWidget {
         '/completedevice': (context) => const Completedevice(),
         '/progress': (context) => const Progress(),
         '/suppstatus': (context) => const Suppstatus(),
+        '/login': (context) => const Login(),
+        '/splash': (context) => const Splash(),
+
+
+
+
 
 
       },

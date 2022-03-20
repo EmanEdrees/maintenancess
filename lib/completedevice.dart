@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:maintenances/header_drawer.dart';
 
@@ -38,95 +39,82 @@ class _CompletedeviceState extends State<Completedevice> {
           ),
         ),
       ),
-      body: SafeArea(
+      body:SafeArea(
         child: Stack(
-          children:
-          [
-            Container(
-              height: 150,
-              width: double.infinity,
-              child: Text(''),
-              decoration: BoxDecoration(
-                  color:Color(0xff022C43)
+       children: [
+         Container(
+           height: 200,
+           width: double.infinity,
+           child: Text(''),
+           decoration: BoxDecoration(
+               color:Color(0xff022C43)
+           ),
+         ),
+         Container(
+           width: 35,
+           height: 35,
+           margin: EdgeInsets.only(right: 15,top:25),
+           child:Text(''),
+           decoration:BoxDecoration(
+             color:Colors.red,
+           ),
+         ),
+         Container(
+           margin: EdgeInsets.only(right: 70,top:25),
+           child:Text('الاجهزة التي تم اكمالها',style: TextStyle(fontFamily: 'Cairo',fontSize: 18,color: Colors.white),),
+         ),
+         SingleChildScrollView(
+           child: Column(
+             children: [
+               Container(
+                 margin: EdgeInsets.only(top:80),
+                 height: 680,
+                 width: double.infinity,
+                 decoration: const BoxDecoration(
+                     color:Colors.white,
+                     borderRadius: BorderRadius.only(topRight: Radius.circular(30),topLeft: Radius.circular(30)),
+                     boxShadow: [
+                       BoxShadow(
+                           color: Color(0xff022C43),
+                           blurRadius: 5.0,
+                           offset: Offset(-2.0, -2.0))
+                     ]),
+                 child: SingleChildScrollView(
+         child: Stack(
+         children: [
+         Container(
+           height: 45,
+             width: double.infinity,
+             margin: EdgeInsets.only(top: 25,right: 3,left: 3),
+        child:Text('                         القسم',style: TextStyle(fontFamily: 'Cairo',fontSize: 18,color: Colors.black),textAlign: TextAlign.center,),
+           decoration: const BoxDecoration(
+               color:Color(0xffF5F5F5),
+               borderRadius: BorderRadius.all(Radius.circular(20)),
               ),
-            ),
-            SingleChildScrollView(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Column(
-                    children: [
-                      //bigbox
-                      Container(
-                        margin: EdgeInsets.only(top:70),
-                        height: double.infinity,
-                        width: double.infinity,
-                        child: SingleChildScrollView(
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            children: [
-                              Container(
-                                width: 35,
-                                height: 35,
-                                margin: EdgeInsets.only(right: 20),
-                                child:Text(''),
-                                decoration:BoxDecoration(
-                                  color:Colors.red,
-                                ),
-                              ),
 
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Container(
-                                      margin: EdgeInsets.only(top: 28,right: 10),
-                                      child: Text('الاجهزة التي تم اكمالها',style: TextStyle(fontFamily: 'Cairo',fontSize: 18,color: Color(0xff022C43)))),
-                                  Container(
-                                    margin: EdgeInsets.only(right: 10,left: 5,bottom: 10,top: 10),
-                                    width: 250,
-                                    height: 8,
-                                    child:Text(''),
-                                    decoration:BoxDecoration(
-                                      border: Border.all(color:Colors.black12,width: 10),
-                                      gradient: LinearGradient(
-                                        colors: [
-                                          Colors.white54,
-                                          Colors.black12,
-                                          Colors.red,
-                                          Colors.red,
-                                          Colors.red,
-                                        ],
-                                      ),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ],
-                          ),
-                        ),
-                        decoration: const BoxDecoration(
-                            color:Colors.white,
-                            borderRadius: BorderRadius.all(Radius.circular(30),),
-                            boxShadow: [
-                              BoxShadow(
-                                  color: Color(0xff022C43),
-                                  blurRadius: 5.0,
-                                  offset: Offset(-2.0, -2.0))
-                            ]),
+      ),
+           Container(
+             height: 45,
+             width: 200,
+             margin: EdgeInsets.only(top: 25,),
+             child:Text('نوع الجهاز',style: TextStyle(fontFamily: 'Cairo',fontSize: 18,color: Colors.white),textAlign: TextAlign.center,),
+             decoration: const BoxDecoration(
+               color:Colors.red,
+               borderRadius: BorderRadius.all(Radius.circular(20)),
+             ),
 
-                      ),
+           ),
 
 
-                    ],
-                  ),
-                ],
-              ),
-            ),
-          ],
-
+      ],
+    ),
+    ),
+               ),
+             ],
+           ),
+         ),
+       ],
         ),
-
       ),
     );
   }

@@ -102,7 +102,7 @@ class _DevicestatusState extends State<Devicestatus> {
               ),
               InkWell(
                 onTap: (){
-                  Navigator.pushNamed(context,'/');
+                  Navigator.pushNamed(context,'/progress');
                 },
                 child: Container(
                   decoration: BoxDecoration(

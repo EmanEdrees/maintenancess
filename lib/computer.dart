@@ -90,7 +90,7 @@ class _ComputerState extends State<Computer> {
                   ),
                 ),
               ],
-            ),
+            ), //bigbox
             SingleChildScrollView(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,

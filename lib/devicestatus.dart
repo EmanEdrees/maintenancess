@@ -155,7 +155,7 @@ class _DevicestatusState extends State<Devicestatus> {
               ),
               InkWell(
                 onTap: (){
-                  Navigator.pushNamed(context,'/');
+                  Navigator.pushNamed(context,'/suppstatus');
                 },
                 child: Container(
                   decoration: BoxDecoration(

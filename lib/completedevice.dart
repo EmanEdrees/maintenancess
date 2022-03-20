@@ -24,7 +24,7 @@ class _CompletedeviceState extends State<Completedevice> {
 
         actions: [
           IconButton(onPressed: (){
-            Navigator.pushNamed(context,'/');
+            Navigator.pushNamed(context,'/devicestatus');
           }, icon: Icon(Icons.arrow_forward)),
         ],
       ),

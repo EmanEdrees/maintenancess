@@ -10,6 +10,7 @@ import 'package:maintenances/nofitication.dart';
 import 'package:maintenances/printer.dart';
 import 'package:maintenances/progress.dart';
 import 'package:maintenances/supply.dart';
+import 'package:maintenances/suppstatus.dart';
 import 'package:maintenances/who.dart';
 import 'computer.dart';
 
@@ -45,6 +46,7 @@ class MyApp extends StatelessWidget {
         '/concat': (context) => const Concat(),
         '/completedevice': (context) => const Completedevice(),
         '/progress': (context) => const Progress(),
+        '/suppstatus': (context) => const Suppstatus(),
 
 
 

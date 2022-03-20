@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:maintenances/header_drawer.dart';
 
-class Progress extends StatefulWidget {
-  const Progress({Key? key}) : super(key: key);
+class Suppstatus extends StatefulWidget {
+  const Suppstatus({Key? key}) : super(key: key);
 
   @override
-  State<Progress> createState() => _ProgressState();
+  State<Suppstatus> createState() => _SuppstatusState();
 }
 
-class _ProgressState extends State<Progress> {
+class _SuppstatusState extends State<Suppstatus> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -55,12 +55,12 @@ class _ProgressState extends State<Progress> {
               margin: EdgeInsets.only(right: 15,top:25),
               child:Text(''),
               decoration:BoxDecoration(
-                color:Color(0xffFFBF0B),
+                color: Color(0xff2BBE70),
               ),
             ),
             Container(
               margin: EdgeInsets.only(right: 70,top:25),
-              child:Text('الاجهزة قيد التنفيذ',style: TextStyle(fontFamily: 'Cairo',fontSize: 18,color: Colors.white),),
+              child:Text('الاقسام التي تم تجهيزها بالمواد',style: TextStyle(fontFamily: 'Cairo',fontSize: 18,color: Colors.white),),
             ),
             SingleChildScrollView(
               child: Column(
@@ -98,7 +98,7 @@ class _ProgressState extends State<Progress> {
                             margin: EdgeInsets.only(top: 25,),
                             child:Text('نوع الجهاز',style: TextStyle(fontFamily: 'Cairo',fontSize: 18,color: Colors.white),textAlign: TextAlign.center,),
                             decoration: const BoxDecoration(
-                              color:Color(0xffFFBF0B),
+                              color: Color(0xff2BBE70),
                               borderRadius: BorderRadius.all(Radius.circular(20)),
                             ),
 

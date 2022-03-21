@@ -40,64 +40,64 @@ class _InternetState extends State<Internet> {
         ),
       ),
       body: SafeArea(
-        child: Stack(
-          children:
-          [
-            Container(
-              height: 200,
-              width: double.infinity,
-              child: Text(''),
-              decoration: BoxDecoration(
-                  color:Color(0xff022C43)
+        child: SingleChildScrollView(
+          child: Stack(
+            children:
+            [
+              Container(
+                height: 200,
+                width: double.infinity,
+                child: Text(''),
+                decoration: BoxDecoration(
+                    color:Color(0xff022C43)
+                ),
               ),
-            ),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                //box inside1
-                Container(
-                  margin: EdgeInsets.only(top:100),
-                  height: 200,
-                  width: 200,
-                  child: Text(''),
-                  decoration: BoxDecoration(
-                    color:Color(0xff00648A),
-                    borderRadius: BorderRadius.only(topRight:Radius.circular(20)),
+              Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  //box inside1
+                  Container(
+                    margin: EdgeInsets.only(top:320),
+                    height: 200,
+                    width: 200,
+                    child: Text(''),
+                    decoration: BoxDecoration(
+                      color:Color(0xff00648A),
+                      borderRadius: BorderRadius.only(topRight:Radius.circular(20)),
 
+                    ),
                   ),
-                ),
-              ],
-            ),
-            Column(
+                ],
+              ),
+              Column(
 
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                //box2
-                Container(
-                  margin: EdgeInsets.only(top:190,right: 300),
-                  height: 200,
-                  width: 200,
-                  child: Text(''),
-                  decoration: BoxDecoration(
-                    color:Color(0xff26ADD9),
-                    borderRadius: BorderRadius.only(bottomLeft:Radius.circular(20)),
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  //box2
+                  Container(
+                    margin: EdgeInsets.only(top:400,right: 300),
+                    height: 200,
+                    width: 200,
+                    child: Text(''),
+                    decoration: BoxDecoration(
+                      color:Color(0xff26ADD9),
+                      borderRadius: BorderRadius.only(bottomLeft:Radius.circular(20)),
 
+                    ),
                   ),
-                ),
-              ],
-            ),
-            SingleChildScrollView(
-              child: Column(
+                ],
+              ),
+              Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Column(
                     children: [
                       Container(
-                        margin: EdgeInsets.only(right: 20,left: 20,top:12),
-                        height: 680,
+                        margin: EdgeInsets.only(right: 20,left: 20,top:20),
+                        height: 650,
                         width: double.infinity,
                         child: SingleChildScrollView(
                           child: Column(
@@ -137,7 +137,7 @@ class _InternetState extends State<Internet> {
                                   ),
                                   Container(
                                     width: 600,
-                                    padding: EdgeInsets.all(15),
+                                    padding: EdgeInsets.all(10),
                                     child: DropdownButton<String>(value: intinal_drop ,iconSize: 36,isExpanded:true,
                                       hint: Text("القسم", style: TextStyle(color: Colors.black,fontSize: 18,fontFamily: 'Cairo'),
                                       ),onChanged: (newval){
@@ -154,7 +154,7 @@ class _InternetState extends State<Internet> {
 
                               //وصف العطل
                               Container(
-                                padding: EdgeInsets.all(15),
+                                padding: EdgeInsets.all(10),
                                 child: const TextField(
                                   decoration: InputDecoration(
                                     labelText: "وصف العطل",
@@ -170,7 +170,7 @@ class _InternetState extends State<Internet> {
                               ),
                               //اجراءات اضافية
                               Container(
-                                padding: EdgeInsets.all(20),
+                                padding: EdgeInsets.all(10),
                                 child: const TextField(
                                   decoration: InputDecoration(
                                     labelText: "اجراءات اضافية",
@@ -188,7 +188,7 @@ class _InternetState extends State<Internet> {
                               ),
                               //التاريخ
                               Container(
-                                padding: EdgeInsets.all(15),
+                                padding: EdgeInsets.all(10),
                                 child: const TextField(
                                   decoration: InputDecoration(
                                     labelText: "التاريخ",
@@ -205,6 +205,7 @@ class _InternetState extends State<Internet> {
                               ),
                               //ارسال الطلب
                               Container(
+                                margin: EdgeInsets.all(25),
                                 child:  ElevatedButton(onPressed: (){
                                   Navigator.pushNamed(context,'/');
                                 }, child: Text('ارسال الطلب',style: TextStyle(fontFamily: 'Cairo',fontSize: 17,color: Colors.white ),),
@@ -236,9 +237,9 @@ class _InternetState extends State<Internet> {
                   ),
                 ],
               ),
-            ),
-          ],
+            ],
 
+          ),
         ),
 
       ),

@@ -30,7 +30,8 @@ class _HomeState extends State<Home> {
               children: [
                   Container(
                     margin: EdgeInsets.only(top:60),
-                    child:Image.asset("assets/image/itlogo.png",width: 85, height: 85),                  ),
+                    child:Image.asset("assets/image/itlogo.png",width: 85, height: 85),
+                  ),
                 Container(
                   margin: EdgeInsets.only(top:10),
                   child: Text('قسم تقنية المعلومات',style: TextStyle(fontFamily: 'Cairo',fontSize: 20,color: Colors.white ),),

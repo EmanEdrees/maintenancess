@@ -40,35 +40,35 @@ class _ConcatState extends State<Concat> {
         ),
       ),
       body: SafeArea(
-        child: Stack(
-          children:
-          [//bodyheader
-            Stack(
-              children: [
-                Container(
-                  height: 150,
-                  width: double.infinity,
-                  child: Text(''),
-                  decoration: BoxDecoration(
-                      color:Color(0xff022C43),
-                    borderRadius: BorderRadius.only(bottomLeft:Radius.circular(100),bottomRight: Radius.circular(120)),
+        child: SingleChildScrollView(
+          child: Stack(
+            children:
+            [//bodyheader
+              Stack(
+                children: [
+                  Container(
+                    height: 150,
+                    width: double.infinity,
+                    child: Text(''),
+                    decoration: BoxDecoration(
+                        color:Color(0xff022C43),
+                      borderRadius: BorderRadius.only(bottomLeft:Radius.circular(100),bottomRight: Radius.circular(120)),
+
+                    ),
+                  ),
+                  Container(
+                    child: Image.asset('assets/image/concatbg2.png',width: 150,height: 150,),
 
                   ),
-                ),
-                Container(
-                  child: Image.asset('assets/image/concatbg2.png',width: 150,height: 150,),
-
-                ),
-              ],
-            ),
-            SingleChildScrollView(
-              child: Column(
+                ],
+              ),
+              Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   //box inside1
                   Container(
-                    margin: EdgeInsets.only(top:2),
+                    margin: EdgeInsets.only(top:300),
                     height: 200,
                     width: 200,
                     child: Text(''),
@@ -80,34 +80,32 @@ class _ConcatState extends State<Concat> {
                   ),
                 ],
               ),
-            ),
-            Column(
+              Column(
 
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                //box2
-                Container(
-                  margin: EdgeInsets.only(top:150,right: 300),
-                  height: 200,
-                  width: 200,
-                  child: Text(''),
-                  decoration: BoxDecoration(
-                    color:Color(0xff26ADD9),
-                    borderRadius: BorderRadius.only(bottomLeft:Radius.circular(20)),
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  //box2
+                  Container(
+                    margin: EdgeInsets.only(top:350,right: 300),
+                    height: 200,
+                    width: 200,
+                    child: Text(''),
+                    decoration: BoxDecoration(
+                      color:Color(0xff26ADD9),
+                      borderRadius: BorderRadius.only(bottomLeft:Radius.circular(20)),
 
+                    ),
                   ),
-                ),
-              ],
-            ), //bigbox
-            SingleChildScrollView(
-              child: Column(
+                ],
+              ), //bigbox
+              Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Column(
                     children: [
                       Container(
-                        margin: EdgeInsets.only(right: 20,left: 20,top:160,bottom: 25),
+                        margin: EdgeInsets.only(right: 20,left: 20,top:180,bottom: 25),
                         height: 500,
                         width: double.infinity,
                         child: Column(
@@ -220,9 +218,9 @@ class _ConcatState extends State<Concat> {
                   ),
                 ],
               ),
-            ),
-          ],
+            ],
 
+          ),
         ),
 
       ),

@@ -34,8 +34,8 @@ class MyApp extends StatelessWidget {
         visualDensity: VisualDensity.adaptivePlatformDensity,
 
       ),
-    home: Splash(),
-      initialRoute: '/',
+    //home: Splash(),
+      initialRoute: '/splash',
       routes: {
         '/': (context) => const Home(),
         '/nofitication': (context) => const Nofitication(),

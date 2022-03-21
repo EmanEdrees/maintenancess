@@ -1,6 +1,10 @@
+import 'dart:async';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'dart:math' as math;
+
+import 'login.dart';
 
 class Splash extends StatefulWidget {
   const Splash({Key? key}) : super(key: key);
@@ -11,6 +15,18 @@ class Splash extends StatefulWidget {
 
 class InitState extends State<Splash> {
   @override
+  void initState(){
+    super.initState();
+    startTimer();
+  }
+  startTimer()async{
+    var duration = Duration(seconds: 3);
+    return new Timer(duration,loginRoute);
+  }
+  loginRoute(){
+    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> Login()
+    ));
+  }
   Widget build(BuildContext context) {
    return initWidget();
   }
